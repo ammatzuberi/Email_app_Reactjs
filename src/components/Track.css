@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .styleStatus {
+    /* background-color: rgb(228, 233, 235); */
+    display: flex;
+margin-left: 300px;
+    align-items: center;
+    /* height: 100vh; */
+    width: 100vw;
+    font-size: 14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+  
+  .circle {
+    width: 29px;
+    height: 29px;
+    line-height: 25px;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  
+  .stepWrapper {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .stepBlock .circleWrapper {
+    padding: 0px 50px;
+    position: relative;
+  }
+  
+  .selected .circle {
+    color: black;
+    background-color: rgb(42, 204, 190);
+    border-color: green;
+  }
+  
+  .stepBlock:not(:last-child) > .circleWrapper::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    background-color: green;
+    margin: auto;
+    z-index: -1;
+  }
+  
+  .stepBlock:not(:last-child) > .circleWrapper::after {
+    height: 3px;
+  }
+  
+  .stepBlock:not(:last-child).selected > .circleWrapper::after, .stepBlock:not(:last-child).selected ~ .stepBlock:not(:last-child) > .circleWrapper::after {
+    height: 2px;
+    opacity: 0.6;
+  }
+  .form{
+    margin-left: 500px;
+    display: flex;
+    padding: 10px 25px;
+    background-color: rgb(42, 204, 190);
+    border: none;
+    margin: 10px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .primaryButton {
+    margin-left: 500px;
+    display: flex;
+    padding: 10px 25px;
+    background-color: green;
+    border: none;
+    margin: 10px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .primaryButton:disabled {
+    opacity: 0.5;
+  }
+
+    
+    table {
+      margin-left: 300px;
+      align-items: center;
+    border: 2px solid forestgreen;
+    width: 800px;
+    height: 200px;
+    }
+    
+    th {
+      height: 50px;
+      text-align: center;
+      border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    }
+    
+    td {
+      border-right: 1px solid black;
+      width: 300px;
+    text-align: center;
+    }
+    

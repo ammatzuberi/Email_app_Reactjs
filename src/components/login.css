@@ -1,0 +1,244 @@
+* { box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
+
+
+body {
+  font-family: 'Rubik', sans-serif;
+
+  /* background: linear-gradient(45deg, greenyellow, dodgerblue); */
+
+
+
+}
+.headingform{
+  color: #3c763d;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+
+.left { 
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  animation-name: left;
+  /* animation-duration: 1s;
+  animation-fill-mode: both; */
+  /* animation-delay: 1s; */
+} 
+
+.right {
+  margin-left: 25px;
+  flex: 1;
+  background-color: black;
+  transition: 1s;
+  background-image: url(https://admin.enggenv.com/store/images/E&E.jpg);
+  
+  /* background-size: cover; */
+  background-size:145% 100%;
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+
+
+
+.header > h2 {
+  margin: 0;
+  color: #4f46a5;
+}
+
+.header > h4 {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(0,0,0,.4);
+}
+
+.form {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form > p {
+  text-align: right;
+}
+
+.form > p > a {
+  color: #000;
+  font-size: 14px;
+}
+
+.form-field {
+  height: 46px;
+  padding: 0 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Rubik', sans-serif;
+  outline: 0;
+  transition: .2s;
+  margin-top: 20px;
+}
+
+.form-field:focus {
+  border-color: #0f7ef1;
+}
+
+.form > button {
+  padding: 12px 10px;
+  border: 0;
+  background: linear-gradient(to right, #3c763d 0%,#2ab99d 100%);
+  border-radius: 3px;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.animation {
+  animation-name: move;
+  animation-duration: .2s;
+  animation-fill-mode: both;
+  /* animation-delay: 1s; */
+}
+
+.a1 {
+  animation-delay: 1s;
+}
+
+.a2 {
+  animation-delay: 1.1s;
+}
+
+.a3 {
+  animation-delay: 1.2s;
+}
+
+.a4 {
+  animation-delay: 1.3s;
+}
+
+.a5 {
+  animation-delay: 1.4s;
+}
+
+.a6 {
+  animation-delay: 1.5s;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes left {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  100% {
+    opacity: 1;
+    padding: 20px 40px;
+    width: 440px;
+  }
+}
+.logout{
+    right: 0;
+    margin-left: 500px;
+    /* margin-top: -42px; */
+    /* margin-bottom: 20px; */
+    cursor: pointer;
+    background-color: #d24026;
+    /* height: 40px; */
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    text-align: center;
+    padding: 0 16px;
+    /* width: 100px; */
+    color: #fff;
+    float: right;
+    padding: 6px;
+    /* margin-top: 8px; */
+    margin-right: 16px;
+    border: none;
+    font-size: 15px;
+}
+
+
+/* .mainpart2{
+  padding: 20px;
+    margin-top: -45px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: left;
+
+    animation-fill-mode: both;
+    border: #000;
+} */
+.label{
+  font-weight: 900;
+  font-size: larger;
+  display: inline-block;
+  text-align: left;
+}
+.btnsumbit{
+  background-color: #4CAF50!important;
+  color: #fff;
+  margin-top: 10px;
+  border:none;
+  width: 100%;
+  height: 50px;
+}
+.btnregister{
+  padding: 12px 10px;
+  border: 0;
+  width: 100%;
+  background: linear-gradient(to right, #3c763d 0%,#2ab99d 100%);
+  border-radius: 3px;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: 'Rubik', sans-serif;
+  cursor: pointer;
+}
+.hedername{
+  color: #4f46a5;
+}
+.img {
+ margin-left:0px;
+  flex: 1;
+  /* background-color: black; */
+  /* transition: 1s; */
+  background-image: url(https://admin.enggenv.com/store/images/E&E.jpg);
+  background-repeat: no-repeat;
+  background-size:140% 100%;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.welcomemessage{
+ 
+  font-weight: 700;
+  margin-inline: 10px;
+  margin-right: 20px;
+}
