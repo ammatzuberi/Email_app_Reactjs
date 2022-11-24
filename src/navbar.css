@@ -42,18 +42,11 @@ body {
   padding: .25rem;
 }
 
-.nav li.active {
-  background-color: #555;
-}
-
-.nav li:hover {
-  background-color: #777;
-}* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
+}
+.nav-item{
+  /* margin-left: 200px; */
 }
 
 .container {
@@ -92,10 +85,15 @@ body {
   padding: .25rem;
 }
 
-.nav li.active {
-  background-color: #555;
-}
 
-.nav li:hover {
-  background-color: #777;
+
+
+.status{
+margin-top: -22px;
+  margin-left: 200px;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* padding: 0.25rem; */
 }

@@ -1,6 +1,9 @@
 * { box-sizing: border-box; }
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
 
+@media only screen and (max-width: 600px){
+  
+}
 
 body {
   font-family: 'Rubik', sans-serif;
@@ -16,11 +19,31 @@ body {
 
 .container {
   display: flex;
+
   height: 100vh;
 }
 
 
+.form_margin{
+  margin-top: 40px;
+}
+.left_signup{
+
+  max-height: max-content;
+  margin-right: 60px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: left;
+    /* background-image: url(https://admin.enggenv.com/store/images/E&E.jpg); */
+    /* background-size:145% 100%; */
+}
 .left { 
+  float: right;
+max-height: max-content;
+margin-right: 60px;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -34,6 +57,7 @@ body {
 
 .right {
   margin-left: 25px;
+
   flex: 1;
   background-color: black;
   transition: 1s;
@@ -60,9 +84,12 @@ body {
 }
 
 .form {
-  max-width: 80%;
+  height:350px;
+  background-color:  #e1e5ee;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
+
 }
 
 .form > p {
@@ -75,7 +102,7 @@ body {
 }
 
 .form-field {
-  height: 46px;
+  height: 50px;
   padding: 0 16px;
   border: 2px solid #ddd;
   border-radius: 4px;
@@ -91,21 +118,23 @@ body {
 
 .form > button {
   padding: 12px 10px;
-  border: 0;
+  border: 0;margin-top: 20px;
   background: linear-gradient(to right, #3c763d 0%,#2ab99d 100%);
   border-radius: 3px;
-  margin-top: 10px;
+  margin-top: 25px;
   color: #fff;
   letter-spacing: 1px;
   font-family: 'Rubik', sans-serif;
+  cursor: pointer;
 }
 
-.animation {
+/* .animation {
+  animation-;
   animation-name: move;
   animation-duration: .2s;
   animation-fill-mode: both;
-  /* animation-delay: 1s; */
-}
+
+} */
 
 .a1 {
   animation-delay: 1s;
@@ -158,8 +187,10 @@ body {
   }
 }
 .logout{
-    right: 0;
-    margin-left: 500px;
+  float: right;
+  margin-top: 5px;
+
+ 
     /* margin-top: -42px; */
     /* margin-bottom: 20px; */
     cursor: pointer;
@@ -172,7 +203,7 @@ body {
     padding: 0 16px;
     /* width: 100px; */
     color: #fff;
-    float: right;
+   
     padding: 6px;
     /* margin-top: 8px; */
     margin-right: 16px;
@@ -181,19 +212,7 @@ body {
 }
 
 
-/* .mainpart2{
-  padding: 20px;
-    margin-top: -45px;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    animation-name: left;
 
-    animation-fill-mode: both;
-    border: #000;
-} */
 .label{
   font-weight: 900;
   font-size: larger;
@@ -207,12 +226,21 @@ body {
   border:none;
   width: 100%;
   height: 50px;
+  border-radius: 20px;
+}
+.btndelete{
+  background-color: #d82316!important;
+  color: #fff;
+  margin-top: 10px;
+  border:none;
+  width: 100%;
+  height: 50px;
 }
 .btnregister{
   padding: 12px 10px;
   border: 0;
   width: 100%;
-  background: linear-gradient(to right, #3c763d 0%,#2ab99d 100%);
+  /* background: linear-gradient(to right, #3c763d 0%,#2ab99d 100%); */
   border-radius: 3px;
   margin-top: 10px;
   color: #fff;
@@ -242,3 +270,4 @@ body {
   margin-inline: 10px;
   margin-right: 20px;
 }
+

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import authService from "../context/auth.server";
 import { useNavigate } from "react-router-dom";
+import "./login.css";
 
 const Signup = () => {
   const [email, setemail] = useState("");
@@ -15,11 +16,12 @@ const Signup = () => {
                 // check for token and user already exists with 200
             alert("Sign up successfully", response);
 
-          navigate('/login');
+          // navigate('/login');
           window.location.reload();
 
         },
       (error)=>{
+        alert("User  Already Exist..")
         console.log(error);
 
       }
@@ -33,21 +35,30 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handlesubmit}>
-        <h3>Sign Up</h3>
-        <input type="text" placeholder="Enter Email"
+    <div className="container">
+          <div className="right"></div>
+      <div className="left_signup">
+
+      
+      <form onSubmit={handlesubmit} className="form">
+        <h3 className="form_margin">Add Users</h3>
+        
+        <input type="email" placeholder="Enter Email"
         value={email}
+        className="form-field animation a3"
         onChange={(e)=>setemail(e.target.value)}
         />
         <input type="password"
         placeholder="password"
         value={password}  
+        className="form-field animation a4"
         onChange={(e)=>setpassword(e.target.value)}
         />
-        <button type="submit" >Sign Up</button>
+        <button type="submit" className='animation a6' >Add </button>
         
       </form>
+      </div>
+  
     </div>
   );
 };

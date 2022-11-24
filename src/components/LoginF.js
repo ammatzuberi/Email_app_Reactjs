@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import authService from '../context/auth.server';
 
+import "./login.css";
+
+
 export default function LoginF() {
 
   const navigate = useNavigate();
@@ -19,6 +22,7 @@ export default function LoginF() {
 
         },
         (error)=>{
+          alert("UserName And Password  is Incorrect")
           console.log(error)
             }
       );
@@ -28,23 +32,33 @@ export default function LoginF() {
     }
 
   };
+  
+
 
   return (
-    <div>
-      <form onSubmit={handlelogin}>
-      <h3>Login</h3>
+    <div className='container'> 
+        <div className='right'></div>
+      <div className='left'>
+
+
+      <form onSubmit={handlelogin} className="form">
+  
+      <h3 className="form_margin">Log In </h3>
       <input type="text"
       placeholder='email' required
       value={email}
+      className="form-field animation a3"
       onChange={(e)=>setemail(e.target.value)}/>
             <input type="password"
       placeholder='password' required
       value={password}
+      className="form-field animation a4"
       onChange={(e)=>setpassword(e.target.value)}/>
-       <button type="submit">Log in</button>
+       <button type="submit" className='animation a6'>Log in</button>
       </form>
 
-      
+      </div>
+  
     </div>
   )
 }

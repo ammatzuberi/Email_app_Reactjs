@@ -12,7 +12,7 @@ const signup = (email, password) => {
       password,
     })
     .then((response) => {
-    //   if (response.data.accessToken) {
+    //   if (response.data.accessToken) { 
     //     localStorage.setItem("user", JSON.stringify(response.data));
     //   }
       return response.data;
@@ -37,6 +37,7 @@ const login = (email, password) => {
 };
 const logout = () => {
     localStorage.removeItem("user");
+    window.location.href="/login";
   };
   
   const getCurrentUser = () => {
