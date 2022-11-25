@@ -27,8 +27,8 @@ var client = new postmark.ServerClient(serverToken);
 
 const Contact = () => {
   var tkn = JSON.parse(localStorage.getItem("user"));
-  var user_email = tkn?.userData?.email;
-  console.log(tkn.userData.email);
+  var user_email = tkn?.email;
+  console.log(tkn.email);
   console.log(tkn.token);
   var newtoken = tkn.token;
 

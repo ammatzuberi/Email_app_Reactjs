@@ -374,7 +374,19 @@ export const Status = () => {
       {posts ? (
         <div className="div_main">
           <table className="table">
-            {admindata.map((post, index) => {
+            <thead>
+              <tr>
+                <th style={{ color: "black" }}>Title</th>
+              </tr>
+            </thead>
+
+
+
+            {admindata.sort((a,b)=> a.email>b.email ? 1:-1)
+            
+            
+           
+            .map((post, index) => {
               return (
                 <thead key={index}>
                   {index == 0 ? (
@@ -394,182 +406,88 @@ export const Status = () => {
                     </tr>
                   ) : (
                     <></>
-                  )}
-                  {/* <tr className="">
-                    <td style={{ fontWeight:"700"}}> {post.email}</td> 
-                  </tr> */}
-                  {/* { post.data.sort((a,b)=>(a.name-b.name))
-                   } */}
-                  {post.data.map((newdata) => {
-                    return (
-                      <tr key={newdata.issueToken} className="admin_data">
-                        <td> {newdata.email}</td>
-                        <td>{newdata.name}</td>
-                        <td>{newdata.supervisor}</td>
-                        <td>{newdata.productType}</td>
-                        <td>{newdata.need}</td>
-                        <td>{newdata.department}</td>
-                        <td>{newdata.date}</td>
-                        <td>{newdata.issueToken}</td>
-                        <td>{newdata.remarks}</td>
-                        <td
-                          style={{
-                            color:
-                              newdata.status === "Request Initiated!"
-                                ? "red"
-                                : "green",
-                          }}
-                        >
-                          {newdata.status}s
-                        </td>
-                        <td id={newdata.issueToken}>
-                          {/* <button className="btn mt-3" style={{backgroundColor:"#0b3629",color:"white"}} onClick={(e)=>setmodel(true)}> 
-                     </button> */}
+                    )}
+                    <tr>
+                      <td style={{fontweight:"bold"}}>
+                      
+                    {post.email}
+                      </td>
 
-                          <button
-                            className="btn_edit"
-                            id={newdata.issueToken}
-                            onClick={(e) => Edituser(newdata.issueToken)}
-                          >
-                            <EditRoundedIcon
-                              style={{
-                                cursor: "pointer",
-                                color: "green",
-                              }}
-                            />
-                          </button>
-
-                          <button
-                            className="btn_delete"
-                            onClick={(e) => deleteEdit(newdata.issueToken)}
-                          >
-                            <DeleteForeverRoundedIcon
-                              style={{
-                                cursor: "pointer",
-                                color: "red",
-                              }}
-                              id={newdata.issueToken}
-                              onClick={(e) => deleteEdit(newdata.issueToken)}
-                            />
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                    </tr>
               
-                  {post.data.map((newdata, index) => {
-                    // return (
-                    //   <tr key={newdata.issueToken} className="admin_data">
-                    //     <td>{newdata.email}</td>
-                    //     <td>{newdata.name}</td>
-                    //     <td>{newdata.supervisor}</td>
-                    //     <td>{newdata.productType}</td>
-                    //     <td>{newdata.need}</td>
-                    //     <td>{newdata.department}</td>
-                    //     <td>{newdata.date}</td>
-                    //     <td>{newdata.issueToken}</td>
-                    //     <td>{newdata.remarks}</td>
-                    //     <td
-                    //       style={{
-                    //         color:
-                    //           newdata.status === "Request Initiated!"
-                    //             ? "red"
-                    //             : "green",
-                    //       }}
-                    //     >
-                    //       {newdata.status}
-                    //     </td>
-                    //     <td id={newdata.issueToken}>
-                    //       {/* <button className="btn mt-3" style={{backgroundColor:"#0b3629",color:"white"}} onClick={(e)=>setmodel(true)}>
-                    //  </button> */}
-                    //       <button
-                    //         className="btn_edit"
-                    //         id={newdata.issueToken}
-                    //         onClick={(e) => Edituser(newdata.issueToken)}
-                    //       >
-                    //         <EditRoundedIcon
-                    //           style={{
-                    //             cursor: "pointer",
-                    //             color: "green",
-                    //           }}
-                    //         />
-                    //       </button>
-                    //       <button
-                    //         className="btn_delete"
-                    //         onClick={(e) => deleteEdit(newdata.issueToken)}
-                    //       >
-                    //         <DeleteForeverRoundedIcon
-                    //           style={{
-                    //             cursor: "pointer",
-                    //             color: "red",
-                    //           }}
-                    //           id={newdata.issueToken}
-                    //           onClick={(e) => deleteEdit(newdata.issueToken)}
-                    //         />
-                    //       </button>
-                    //       <Popup
-                    //       // trigger={
-                    //       //   <button>edit</button>
-                    //       //                         <i
-                    //       // id={newdata.issueToken} className="btnsumbit" onClick={(e)=>Edituser(e.target.id)}>boom</i>
-                    //       // <MDBIcon fas icon="pen"  />
-                    //       //   <button id={newdata.issueToken} onClick={(e)=>Edituser(e.target.id) }>
-                    //       //  edit
-                    //       //   </button>
-                    //       // }
-                    //       //                       trigger={
-                    //       //                         <a
-                    //       // id={newdata.issueToken} className="far fa-edit add-btn " onClick={(e)=>Edituser(e.target.id)}> </a>
-                    //       //                         // <button>edit</button>
-                    //       //                       // <MDBIcon fas icon="pen"  id={newdata.issueToken} onClick={(e)=>Edituser(e.target.id)} />
-                    //       //                     }
-                    //       >
-                    //         <form
-                    //           className="content"
-                    //           ref={form}
-                    //           onSubmit={updateData}
-                    //         >
-                    //           <h2>Edit</h2>
-                    //           <label>Email</label>
-                    //           <input
-                    //             type="email"
-                    //             id="email"
-                    //             onChange={(e) => handle(e)}
-                    //             value={updatedata.email}
-                    //           />
-                    //           <label> Issue Token</label>
-                    //           <input
-                    //             type="text"
-                    //             id="issueToken"
-                    //             placeholder="Enter User Token "
-                    //             onChange={(e) => handle(e)}
-                    //             value={updatedata.issueToken}
-                    //           />
-                    //           <label>Status</label>
-                    //           <input
-                    //             type="text"
-                    //             id="status"
-                    //             onChange={(e) => handle(e)}
-                    //             value={updatedata.status}
-                    //           />
-                    //           <input
-                    //             type="submit"
-                    //             onSubmit={updateData}
-                    //             className="btnsumbit"
-                    //             value="Apply for change "
-                    //           />
-                    //         </form>
-                    //       </Popup>
-                    //       {/* </i> */}
-                    //     </td>
-                    //   </tr>
-                    // );
-                  })}
-                </thead>
+
+                        
+
+
+{post.data.map((newdata) => {
+  return (
+    <tr key={newdata.issueToken} className="admin_data">
+      <td> {newdata.email}</td>
+      <td>{newdata.name}</td>
+      <td>{newdata.supervisor}</td>
+      <td>{newdata.productType}</td>
+      <td>{newdata.need}</td>
+      <td>{newdata.department}</td>
+      <td>{newdata.date}</td>
+      <td>{newdata.issueToken}</td>
+      <td>{newdata.remarks}</td>
+      <td
+        style={{
+          color:
+            newdata.status === "Request Initiated!"
+              ? "red"
+              : "green",
+        }}
+      >
+        {newdata.status}
+      </td>
+      <td id={newdata.issueToken}>
+     
+
+        <button
+          className="btn_edit"
+          id={newdata.issueToken}
+          onClick={(e) => Edituser(newdata.issueToken)}
+        >
+          <EditRoundedIcon
+            style={{
+              cursor: "pointer",
+              color: "green",
+            }}
+          />
+        </button>
+
+        <button
+          className="btn_delete"
+          onClick={(e) =>
+            deleteEdit(newdata.issueToken)
+          }
+        >
+          <DeleteForeverRoundedIcon
+            style={{
+              cursor: "pointer",
+              color: "red",
+            }}
+            id={newdata.issueToken}
+            onClick={(e) =>
+              deleteEdit(newdata.issueToken)
+            }
+          />
+        </button>
+      </td>
+    </tr>
+  );
+})}
+
+
+
+
 
                
+                </thead>
               );
             })}
+             
           </table>
         </div>
       ) : (
