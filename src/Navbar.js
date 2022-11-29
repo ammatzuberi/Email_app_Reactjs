@@ -42,8 +42,8 @@ export default function Navbar() {
        E&E
       </Link> */}
       <ul className="ulform_status">
-        <CustomLink to="/">Add Issue</CustomLink>
-        <CustomLink to="/CheckStatus">Status</CustomLink>
+        <CustomLink to="/">ADD ISSUE</CustomLink>
+        <CustomLink to="/CheckStatus">STATUS</CustomLink>
       </ul>
     </nav>
     ):(
@@ -58,7 +58,7 @@ export default function Navbar() {
       </Link> */}
       <ul className="nav-item">
        
-        <CustomLink to="/signup" className="admin_signin">Add Users</CustomLink>
+        <CustomLink to="/signup" className="admin_signin">ADD USERS</CustomLink>
       </ul>
     </nav>
     )}

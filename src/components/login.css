@@ -30,7 +30,7 @@ body {
 .left_signup{
 
   max-height: max-content;
-  margin-right: 60px;
+  margin-left: 60px;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;

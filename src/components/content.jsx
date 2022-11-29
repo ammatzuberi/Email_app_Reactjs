@@ -27,12 +27,11 @@ var client = new postmark.ServerClient(serverToken);
 
 const Contact = () => {
   var tkn = JSON.parse(localStorage.getItem("user"));
-  var user_email = tkn?.userData?.email;
-  console.log(tkn.userData.email);
-  console.log(tkn.token);
+  var user_email = tkn?.email;
+
   var newtoken = tkn.token;
 
-  console.log();
+
 
   const [data, setData] = useState({
     name: "",
@@ -294,7 +293,7 @@ const Contact = () => {
                 <option> --Select--</option>
                 <option name="head">Shah Saud Abdali</option>
                 <option name="head">Syed Abu Rehan</option>
-                <option name="head">Sabir Ahmed Shamoo</option>
+                <option name="head">Mohammad Hamza</option>
               </select>
             </div>
 
@@ -310,15 +309,9 @@ const Contact = () => {
                 <option> --Select--</option>
                 <option name="P_Name">LAPTOP</option>
                 <option name="P_Name">DESKTOP</option>
-                {/* <input  type ="text " name="P_Name"  ></input> */}
+           
               </select>
-              {/* <input
-              type="text"
-              name="P_Name"
-              required
-              className="form-control"
-              placeholder="Enter type. Laptop, Desktop etc "
-            /> */}
+         
             </div>
           </div>
           <div className="row">
@@ -342,15 +335,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* <label>Quantity</label>
-            <input
-              type="number"
-              className="form-control"
-              placeholder="how much Quantity Needed"
-              name="quantity"
-              required
-            /> */}
-
+      
           <div className="row">
             <div className="col">
               <label>Department </label>
@@ -369,21 +354,6 @@ const Contact = () => {
               </select>
             </div>
 
-            {/* <input
-              type="text"
-              name="Department"
-              className="form-control"
-              placeholder="Enter Your Department "
-              required
-            /> */}
-
-            {/* <input
-              type="text"
-              className="form-control"
-              placeholder="Please Enter Your Head Name"
-              name="head"
-              required
-            /> */}
             <div className="col">
               <label> Remarks</label>
               <textarea
@@ -406,29 +376,11 @@ const Contact = () => {
         </form>
       </div>
 
-      {/* <div className="img"> </div> */}
-      {/* </div> */}
+
     </>
   );
 };
 
-// let name_logout = localStorage.getItem("name")
-//     ? localStorage.getItem("name")
-//     : "";
-
-//   // console.log(name_logout)
-//   if (name_logout == "") {
-//     alert("you need to login first ");
-//     window.location.href = "login.js";
-//   }
-
-//   if (window.confirm("Are Your Sure Logout?")) {
-//     window.location.href = "/";
-//     localStorage.removeItem("name");
-//     localStorage.removeItem("email");
-//   } else {
-//     // window.location.href="productDetail.html"
-//   }
 
 
 export default Contact;

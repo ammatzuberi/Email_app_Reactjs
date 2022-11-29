@@ -147,7 +147,7 @@ function App() {
   
                 <li className="active">
                   <Link to={"/"} className="nav-link">
-                    Home
+                    HOME
                 {/* <img src="https://media-exp1.licdn.com/dms/image/C560BAQHZ36eqffoDbw/company-logo_200_200/0/1607066793624?e=2147483647&v=beta&t=oemfKLWsSWsCijZfnFaCdAOH5z_we7ptWJXSvHV1O9k"/> */}
                   </Link>
                 </li>

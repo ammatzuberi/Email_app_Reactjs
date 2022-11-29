@@ -3,12 +3,12 @@ $breakpoint: 799px;
 $nav-height: 70px;
 $nav-background: none;
 $nav-font-color: #0c0c0c;
-$link-hover-color: #10b354; 
+$link-hover-color: #10b354;
 
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 
-body{
-  font-family: 'Poppins'
+body {
+  font-family: "Poppins";
 }
 
 .navigation {
@@ -28,9 +28,8 @@ body{
   line-height: $nav-height;
   text-transform: uppercase;
   font-size: 1.4em;
-  
-  &:hover{
-    
+
+  &:hover {
   }
 
   a,
@@ -39,16 +38,16 @@ body{
     text-decoration: none;
   }
 }
-.email_tr{
+.email_tr {
   margin-bottom: 200px;
 }
 
 .nav {
   float: right;
   ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     li {
       float: left;
       position: relative;
@@ -59,25 +58,23 @@ body{
         // background: $nav-background;
         color: $nav-font-color;
         text-decoration: none;
-        
-        
-        
-         &::before {
-           transition: 300ms;
-           height: 5px;
-           content: "";
-           position: absolute;
-           background-color: $link-hover-color;
-           width: 0%;
-           bottom: 0px;
+
+        &::before {
+          transition: 300ms;
+          height: 5px;
+          content: "";
+          position: absolute;
+          background-color: $link-hover-color;
+          width: 0%;
+          bottom: 0px;
         }
 
-        &:hover::before{
+        &:hover::before {
           width: 70%;
         }
         &:not(:only-child):after {
           padding-left: 4px;
-          content: ' ▾';
+          content: " ▾";
         }
       } // Dropdown list
       ul li {
@@ -91,11 +88,8 @@ body{
   }
 }
 
-
-
- nav > ul > li.active > a
-{
-  color:#fff;
+nav > ul > li.active > a {
+  color: #fff;
 }
 
 .nav-dropdown {
@@ -115,12 +109,10 @@ body{
   width: $nav-height;
 }
 
-ul .active  {
+ul .active {
   background-color: $link-hover-color;
- text-decoration: #e7e7e7 ;
- color: #ddd;
- 
-  
+  text-decoration: #e7e7e7;
+  color: #ddd;
 }
 
 @media only screen and (max-width: $breakpoint) {
@@ -128,19 +120,19 @@ ul .active  {
     display: block;
   }
   nav {
-      width: 100%;
-      padding: $nav-height 0 15px;
+    width: 100%;
+    padding: $nav-height 0 15px;
     ul {
       display: none;
-      
-      li{
+
+      li {
         float: none;
-        
+
         a {
           padding: 15px;
           line-height: 20px;
-          
-          &:hover::before{
+
+          &:hover::before {
             width: 20%;
           }
         }
@@ -171,7 +163,7 @@ ul .active  {
     background: $link-hover-color;
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     transition: all 300ms ease-in-out;
   }
   span:before {
@@ -201,8 +193,7 @@ ul .active  {
   }
 }
 
-.ulapp{
-
+.ulapp {
   width: 100%;
   list-style-type: none;
   margin: 0;
@@ -212,18 +203,6 @@ ul .active  {
   background-color: #f3f3f3;
   position: fixed;
 }
-
-
-
-// ul {s
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-//   overflow: hidden;
-//   border: 1px solid #e7e7e7;
-//   background-color: #f3f3f3;
-// }
-
 
 li a {
   margin-top: 5px;
@@ -242,12 +221,12 @@ li a {
 
 .li a .active {
   color: rgb(10, 4, 4);
-  background-color: #04AA6D;
+  background-color: #04aa6d;
 }
-.nav-link .active{
+.nav-link .active {
   background-color: #0ab121;
 }
-nav{
-position: fixed;
-margin-left: 55%
+nav {
+  position: fixed;
+  margin-left: 55%;
 }
