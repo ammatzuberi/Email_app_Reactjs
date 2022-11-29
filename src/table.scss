@@ -40,7 +40,8 @@ $radius: 0.2rem;
   background-color: $clr-gray100;
 }
 .table_user {
-  border-radius: 50px;
+  border-collapse: collapse;
+  // border-radius: 50px;
   margin-top: 50px;
   overflow-x: auto;
   max-width: 90%;
@@ -84,7 +85,7 @@ $radius: 0.2rem;
     font-weight: 200 !important;
     background-color: #fff;
     color: #000;
-  font-weight: bold !important;
+  font-weight: bold !important; 
   }
   .tr_admin {
     border-collapse: separate !important;
