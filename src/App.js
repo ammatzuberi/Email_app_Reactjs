@@ -1,7 +1,6 @@
 import Contact from "./components/content.jsx";
 import Register from "./components/Registeration";
 
-
 import { Await, BrowserRouter, json } from "react-router-dom";
 import Login from "./components/Login";
 import Navbar from "./Navbar";
@@ -58,6 +57,7 @@ import authService from "./context/auth.server.js";
 let name_logout = localStorage.getItem("user")
   ? localStorage.getItem("user")
   : "";
+console.log(name_logout);
 
 var token = JSON.parse(localStorage.getItem("user"));
 // console.log(token?.role)
@@ -78,12 +78,10 @@ function App() {
   }, []);
   const logOut = () => {
     authService.logout();
-  
   };
   setTimeout(() => {
-    authService.logout();  
-
-}, 3600000);
+    authService.logout();
+  }, 360000);
   return (
     <div className="App">
       {/* <link to="/" className="nav-link">
@@ -122,15 +120,13 @@ function App() {
   </Admin> */}
       <BrowserRouter>
         {/* <nav className="navbar navbar-expand-lg navbar-light bg-light"> */}
-     
-            
-              {/* <li className="nav-item">
+
+        {/* <li className="nav-item">
                 <Link to={"/"} className="nav-link">
                   Home
                 </Link>
               </li> */}
-                  {/* <nav  className="nav"> */}
-        
+        {/* <nav  className="nav"> */}
 
         {/* <Link to="/" className="site-title">
          E&E
@@ -140,54 +136,38 @@ function App() {
           <CustomLink to="/CheckStatus">Status</CustomLink>
         </ul>
       </nav> */}
-<ul className="ulapp">
-
-              {currentUser && (
-          
-  
-                <li className="active">
-                  <Link to={"/"} className="nav-link">
-                    HOME
+        <ul className="ulapp">
+          {currentUser && (
+            <li className="active">
+              <Link to={"/"} className="nav-link">
+                HOME
                 {/* <img src="https://media-exp1.licdn.com/dms/image/C560BAQHZ36eqffoDbw/company-logo_200_200/0/1607066793624?e=2147483647&v=beta&t=oemfKLWsSWsCijZfnFaCdAOH5z_we7ptWJXSvHV1O9k"/> */}
-                  </Link>
-                </li>
+              </Link>
+            </li>
+          )}
 
-              
-              )}
-  
-            {currentUser ? (
-        
-
-
-
-       
-                <li className="nav-item">
-                  <a href="/login" className="logout" onClick={logOut}>
-                    Logout
-                  </a>
-                </li>
-               
-           
-           
-            ) : (
-           <ul>
-
-         
-                {/* <li className="nav-item">
+          {currentUser ? (
+            <li className="nav-item">
+              <a href="/login" className="logout" onClick={logOut}>
+                Logout
+              </a>
+            </li>
+          ) : (
+            <ul>
+              {/* <li className="nav-item">
                   <Link to={"/login"} className="nav-link">
                     Login
                   </Link>
                 </li> */}
 
-                {/* <li className="nav-item">
+              {/* <li className="nav-item">
                   <Link to={"/signup"} className="nav-link">
                     Sign up
                   </Link>
                 </li> */}
-                </ul>
-            )}
-      
-      </ul>
+            </ul>
+          )}
+        </ul>
         <Routes>
           {/* <Route path="signup" element={ <Signup />} /> */}
           {/* <Route path="/login" element={ <LoginF />} />  */}
@@ -200,13 +180,13 @@ function App() {
           />
           <Route
             path="/signup"
-            element={   <Signup />}
-            //   name_logout != "" ? (
-            //     <Navigate to="/" replace={true} />
-            //   ) : (
-             
-            //   )
-            // }
+            element={
+              role == "admin" ? (
+                <Signup />
+              ) : (
+                <Navigate to="/login" replace={true} />
+              )
+            }
           />
           <Route
             path="/Login"

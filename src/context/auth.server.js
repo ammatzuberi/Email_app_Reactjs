@@ -49,6 +49,7 @@ const logout = () => {
   const authService = {
     token,
     signup,
+    
     login,
     logout,
     getCurrentUser,

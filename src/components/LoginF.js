@@ -37,7 +37,7 @@ export default function LoginF() {
 
   return (
     <div className='container'> 
-        <div className='right'></div>
+
       <div className='left'>
 
 

@@ -68,7 +68,7 @@ $radius: 0.2rem;
   margin-left: 45px;
 
   // margin-right: 200px;
-  overflow-x: auto;
+  // overflow-x: auto;
 
   // box-shadow: 0 5px 10px $clr-gray600;
   background-color: white;
@@ -127,6 +127,9 @@ $radius: 0.2rem;
   //   background-color: $clr-gray150;
   // }
 }
+.main_email{
+  cursor: pointer;
+}
 td:nth-child(odd) {
   // background-color: $clr-gray300;
 }
@@ -153,3 +156,6 @@ td:nth-child(odd) {
 
   background-color: #1f295a;
 }
+
+
+

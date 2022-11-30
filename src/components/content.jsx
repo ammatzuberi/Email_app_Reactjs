@@ -61,37 +61,7 @@ const Contact = () => {
   function handlesubmit() {
     authService.logout();
   }
-  //  async function handlesubmit(){
-  // seterror('')
-  // try{
-  //   await logout()
-  //   signout('/login')
 
-  // }catch{
-
-  //   seterror('cannot logout  at this point..')
-  // }
-
-  //   }
-
-  //   let name_logout = localStorage.getItem("name")
-  //     ? localStorage.getItem("name")
-  //     : "";
-
-  //   // console.log(name_logout)
-  //   if (name_logout == "") {
-  //     alert("you need to login first ");
-  //     window.location.href = "login.js";
-  //   }
-
-  //   if (window.confirm("Are Your Sure Logout?")) {
-  //     window.location.href = "/";
-  //     localStorage.removeItem("name");
-  //     localStorage.removeItem("email");
-  //   } else {
-  //     // window.location.href="productDetail.html"
-  //   }
-  // };
   var tkn = JSON.parse(localStorage.getItem("user"));
   // console.log(tkn.token);
   // console.log(tkn.role);

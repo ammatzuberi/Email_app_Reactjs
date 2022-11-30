@@ -17,12 +17,28 @@ body {
   color: #3c763d;
 }
 
-.container {
+.container-signup {
   display: flex;
+  background-image: url(https://colorlib.com/etc/lf/Login_v4/images/bg-01.jpg);
+  
 
   height: 100vh;
-}
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-size:145% 100%;
 
+}
+.container {
+  display: flex;
+  background-image: url(https://colorlib.com/etc/lf/Login_v5/images/bg-01.jpg);
+  
+
+  height: 100vh;
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-size:145% 100%;
+
+}
 
 .form_margin{
   margin-top: 40px;
@@ -61,7 +77,7 @@ margin-right: 60px;
   flex: 1;
   background-color: black;
   transition: 1s;
-  background-image: url(https://admin.enggenv.com/store/images/E&E.jpg);
+  /* background-image: url(https://colorlib.com/etc/lf/Login_v4/images/bg-01.jpg); */
   
   /* background-size: cover; */
   background-size:145% 100%;
@@ -85,11 +101,13 @@ margin-right: 60px;
 
 .form {
   height:350px;
-  background-color:  #e1e5ee;
+  background-color:  #fff;
   max-width: 100%;
+  width: 280px;
   display: flex;
   flex-direction: column;
-
+  border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .form > p {
@@ -119,7 +137,7 @@ margin-right: 60px;
 .form > button {
   padding: 12px 10px;
   border: 0;margin-top: 20px;
-  background: linear-gradient(to right, #3c763d 0%,#2ab99d 100%);
+  background: -webkit-linear-gradient(right,#fc00ff,#00dbde);
   border-radius: 3px;
   margin-top: 25px;
   color: #fff;

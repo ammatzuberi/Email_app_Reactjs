@@ -104,7 +104,7 @@ function Login() {
               </div>
             </div>
           </div>
-          <div className="right" ></div>
+          {/* <div className="right" ></div> */}
     </div>
       ) : (
         <Contact />

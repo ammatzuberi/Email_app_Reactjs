@@ -12,6 +12,7 @@ import { useState } from "react";
 import "../table.scss";
 import { Modal, ModalHeader, Row, Col, ModalBody } from "reactstrap";
 import { color } from "@mui/system";
+import { Collapse } from "bootstrap";
 
 const url = "http://localhost:5000/issue/getUserIssues";
 const update_url = "http://localhost:5000/issue/updateIssueStatus";
@@ -21,6 +22,14 @@ var editdata;
 var Delete_data;
 
 export const Status = () => {
+  const toggle = () => {
+    var collapse = document.getElementsByClassName("admin_data");
+
+    for (var i = 0; i < collapse.length; i++) {
+      collapse[i].classList.toggle("hide-me");
+    }
+  };
+
   var tkn = JSON.parse(localStorage.getItem("user"));
   var role = tkn.role;
   var newtoken = tkn.token;
@@ -33,6 +42,7 @@ export const Status = () => {
     window.location.href = "/";
   };
   const [data, setdata] = useState([]);
+  const [table_collapse, settable_collapse] = useState(false);
 
   const [modal, setmodel] = useState(false);
 
@@ -73,8 +83,6 @@ export const Status = () => {
 
     setadmindata(data);
     setEditUser(data);
-
-    // console.log(data);
   };
 
   // delete a issue from the database api..
@@ -363,18 +371,19 @@ export const Status = () => {
                       <></>
                     )}
 
-                    <tr className="main_email">
-                      <td>{post.email}</td>
+                    <tr
+                      className="main_email"
+                    
+                    >
+                      <td onClick={toggle}>{post.email}</td>
                     </tr>
 
                     {/* Nested map is for fetching (data array) and show that to the website */}
 
                     {post.data.map((newdata) => {
                       return (
-                      
-                     
-                        <tr key={newdata.issueToken} className="admin_data">
-                          <td > {newdata.email}</td>
+                        <tr key={newdata.issueToken} className="admin_data hide-me" >
+                          <td> {newdata.email}</td>
                           <td>{newdata.name}</td>
                           <td>{newdata.supervisor}</td>
                           <td>{newdata.productType}</td>
@@ -467,7 +476,7 @@ export const Status = () => {
                         post.status === "Request Initiated!" ? "blue" : "green",
                     }}
                   >
-                    {post.status}{" "}
+                    {post.status}
                   </td>
                 </tr>
               );
