@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "name": "ammat",
+    "email": "ammat@gmail.com",
+    "supervisor": "Shah Saud Abdali",
+    "productType": "LAPTOP",
+    "need": "sdd",
+    "department": "R&D (IT)",
+    "remarks": "auto"
+  },
+  {
+    "id": 1,
+    "name": "ammat",
+    "email": "ammat@gmail.com",
+    "supervisor": "Shah Saud Abdali",
+    "productType": "LAPTOP",
+    "need": "sdd",
+    "department": "R&D (IT)",
+    "remarks": "auto"
+  },
+  {
+    "id": 2,
+    "name": "Ahad",
+    "email": "ahad@gmail.com",
+    "supervisor": "Shah Saud Abdali",
+    "productType": "LAPTOP",
+    "need": "neeed urgent assist",
+    "department": "R&D (IT)",
+    "remarks": " in need"
+  },
+  {
+    "id": 3,
+    "name": "ammat",
+    "email": "ammat@gmail.com",
+    "supervisor": "Shah Saud Abdali",
+    "productType": "LAPTOP",
+    "need": "laptop Hang Problem",   
+    "department": "PIEZO",
+    "remarks": "need assist"
+  },
+  {
+    "id": 4,
+    "name": "Fai z",
+    "email": "faizaliamu94@gmail.com",
+    "supervisor": "Shah Saud Abdali",
+    "productType": "LAPTOP",
+    "need": "RAM",
+    "department": "R&D (IT)",
+    "remarks": "Kuch nahi bas dua chahiye"
+  },
+  {
+    "id": 5,
+    "name": "almas",
+    "email": "almas@gmail.com",
+    "supervisor": "Shah Saud Abdali",
+    "productType": "DESKTOP",
+    "need": "SSD",
+    "department": "R&D (IT)",
+    "remarks": "urgent"
+  }
+]
