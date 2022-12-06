@@ -58,7 +58,7 @@ const Signup = () => {
         
       </form>
       </div>
-      {/* <div className="right"></div> */}
+ 
   
     </div>
   );

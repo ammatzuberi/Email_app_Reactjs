@@ -3,12 +3,12 @@ $breakpoint: 799px;
 $nav-height: 70px;
 $nav-background: none;
 $nav-font-color: #0c0c0c;
-$link-hover-color: #10b354;
+$link-hover-color: #04aa6d;
 
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 
 body {
-  font-family: "Poppins";
+  font-family: "Poppins"; 
 }
 
 .navigation {
@@ -29,9 +29,7 @@ body {
   text-transform: uppercase;
   font-size: 1.4em;
 
-  &:hover {
-  }
-
+ 
   a,
   a:visited {
     color: $nav-font-color;
@@ -228,5 +226,5 @@ li a {
 }
 nav {
   position: fixed;
-  margin-left: 55%;
+  margin-left: -6%
 }

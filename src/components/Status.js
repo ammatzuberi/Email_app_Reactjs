@@ -4,6 +4,8 @@ import Navbar from "../Navbar";
 import "./Track.css";
 import axios from "axios";
 import { useSortBy } from "react-table";
+import { FaUser } from "react-icons/fa";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
@@ -22,14 +24,6 @@ var editdata;
 var Delete_data;
 
 export const Status = () => {
-  const toggle = () => {
-    var collapse = document.getElementsByClassName("admin_data");
-
-    for (var i = 0; i < collapse.length; i++) {
-      collapse[i].classList.toggle("hide-me");
-    }
-  };
-
   var tkn = JSON.parse(localStorage.getItem("user"));
   var role = tkn.role;
   var newtoken = tkn.token;
@@ -42,7 +36,9 @@ export const Status = () => {
     window.location.href = "/";
   };
   const [data, setdata] = useState([]);
+
   const [table_collapse, settable_collapse] = useState(false);
+  const [show, setShow] = useState(false);
 
   const [modal, setmodel] = useState(false);
 
@@ -50,6 +46,7 @@ export const Status = () => {
   const [admindata, setadmindata] = useState([]);
 
   const [EditUser, setEditUser] = useState("");
+  const [datatoggle, setdatatoggle] = useState(null);
 
   const [updatedata, setupdatedata] = useState({
     email: "",
@@ -83,6 +80,25 @@ export const Status = () => {
 
     setadmindata(data);
     setEditUser(data);
+  };
+
+  //
+
+  // console.log(index_data);
+  console.log(admindata);
+
+  var collapse = document.getElementsByClassName("main_email");
+
+  for (var i = 0; i < collapse.length; i++) {
+    console.log(collapse.length);
+
+  }
+
+  const toggle = (index_show) => {
+    if (datatoggle == index_show) {
+      return setdatatoggle(null);
+    }
+    setdatatoggle(index_show);
   };
 
   // delete a issue from the database api..
@@ -230,7 +246,6 @@ export const Status = () => {
       document.body.classList.remove("active-modal");
     }
   }, []);
-  let sorted;
 
   return (
     <>
@@ -340,15 +355,13 @@ export const Status = () => {
       {posts ? (
         <div className="div_main">
           <table className="table">
-            <thead>
-              <tr>{/* <th style={{ color: "black" }}>Title</th> */}</tr>
-            </thead>
             {/* sorting  the email and show the email   to the website sorted  */}
             {/*   filter  the lenght is for if the lenght exist display only ...  that data*/}
 
             {admindata
               .sort((a, b) => (a.email > b.email ? 1 : -1))
               .filter((item) => item.data.length)
+
               .map((post, index) => {
                 return (
                   <thead key={index}>
@@ -371,29 +384,47 @@ export const Status = () => {
                       <></>
                     )}
 
-                    <tr
-                      className="main_email"
-                    
-                    >
-                      <td onClick={toggle}>{post.email}</td>
-                   
+                    <tr className="main_email" onClick={() => toggle(index)}>
+                      <td
+                        colSpan="11"
+                        className="email_td"
+                        onClick={() => settable_collapse(!table_collapse)}
+                        style={{ height: "20px" }}
+                      >
+                        <span className="email_span">
+                          <FaUser style={{ marginRight: "10px" }} />
+
+                          {post.email}
+                        </span>
+                        <span className="number">{post.data.length}</span>
+                        {!table_collapse ? (
+                          <FaCaretDown style={{ float: "right" }} />
+                        ) : (
+                          <FaCaretUp style={{ float: "right" }} />
+                        )}
+                      </td>
                     </tr>
-                 
-                    {/* Nested map is for fetching (data array) and show that to the website */}
 
                     {post.data.map((newdata) => {
                       return (
-                        <tr key={newdata.issueToken} className="admin_data hide-me" >
-                          <td> {newdata.email}</td>
-                          <td>{newdata.name}</td>
-                          <td>{newdata.supervisor}</td>
-                          <td>{newdata.productType}</td>
-                          <td>{newdata.need}</td>
-                          <td>{newdata.department}</td>
-                          <td>{newdata.date}</td>
-                          <td>{newdata.issueToken}</td>
-                          <td>{newdata.remarks}</td>
-                          <td
+                        <tr
+                          key={newdata.issueToken}
+                          className={
+                            datatoggle === index
+                              ? "admin_data"
+                              : "admin_data hide-me"
+                          }
+                        >
+                          <td className="email_td">{newdata.email}</td>
+                          <td  className="email_td">{newdata.name}</td>
+                          <td className="email_td">{newdata.supervisor}</td>
+                          <td className="email_td">{newdata.productType}</td>
+                          <td className="email_td">{newdata.need}</td>
+                          <td className="email_td">{newdata.department}</td>
+                          <td className="email_td">{newdata.date}</td>
+                          <td className="email_td">{newdata.issueToken}</td>
+                          <td className="email_td">{newdata.remarks}</td>
+                          <td  className="email_td"
                             style={{
                               color:
                                 newdata.status === "Request Initiated!"
@@ -403,7 +434,7 @@ export const Status = () => {
                           >
                             {newdata.status}
                           </td>
-                          <td id={newdata.issueToken}>
+                          <td id={newdata.issueToken}  className="email_td">
                             <button
                               className="btn_edit"
                               id={newdata.issueToken}
@@ -441,9 +472,9 @@ export const Status = () => {
         </div>
       ) : (
         // user table show.......
-        <table className="table_user">
+        <table className="usertable">
           <thead>
-            <tr className="tr_user">
+            <tr className="tr_admin">
               <th>NAME</th>
               <th>EMAIL</th>
 
@@ -461,17 +492,18 @@ export const Status = () => {
           <tbody className="trdiv">
             {data?.map((post) => {
               return (
-                <tr key={post.issueToken}>
-                  <td> {post.name} </td>
+                <tr key={post.issueToken} className="admin_data">
+                  <td className="user_td"> {post.name} </td>
 
-                  <td> {post.email} </td>
-                  <td> {post.supervisor} </td>
-                  <td> {post.productType} </td>
-                  <td> {post.need}</td>
-                  <td>{post.department} </td>
-                  <td>{post.date} </td>
-                  <td>{post.remarks} </td>
+                  <td className="user_td" > {post.email} </td>
+                  <td className="user_td"> {post.supervisor} </td>
+                  <td className="user_td"> {post.productType} </td>
+                  <td className="user_td"> {post.need}</td>
+                  <td className="user_td">{post.department} </td>
+                  <td className="user_td">{post.date} </td>
+                  <td className="user_td">{post.remarks} </td>
                   <td
+                 className="user_td"
                     style={{
                       color:
                         post.status === "Request Initiated!" ? "blue" : "green",

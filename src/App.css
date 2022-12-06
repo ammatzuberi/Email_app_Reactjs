@@ -5,7 +5,7 @@
   
   body {
     margin: 0;
-    background: #c8e5f0;
+    background: #e0ecf1;
   
   }
   
@@ -59,7 +59,7 @@
     border-radius: 4px;
 }
 .table {
-  background-color: #e1e5ee;
+  /* background-color: #e1e5ee; */
  
   display: block;
   margin-right: 20px;
