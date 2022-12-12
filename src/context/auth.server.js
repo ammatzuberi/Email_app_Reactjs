@@ -9,7 +9,7 @@ const signup = (email, password) => {
   return axios
     .post("http://localhost:5000/user/register", {
       email,
-      password,
+      password, 
     })
     .then((response) => {
     //   if (response.data.accessToken) { 
@@ -37,7 +37,7 @@ const login = (email, password) => {
 };
 const logout = () => {
     localStorage.removeItem("user");
-    window.location.href="/login";
+    window.location.href="/";
   };
   
   const getCurrentUser = () => {
@@ -49,7 +49,7 @@ const logout = () => {
   const authService = {
     token,
     signup,
-    
+
     login,
     logout,
     getCurrentUser,

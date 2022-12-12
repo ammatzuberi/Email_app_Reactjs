@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Navbar from "./Navbar";
 import "../src/navbar.scss";
 import React, { useEffect, useState } from "react";
+import { FiLogOut } from "react-icons/fi";
 
 import {
   BrowserRouter as Router,
@@ -139,18 +140,21 @@ function App() {
         <ul className="ulapp">
           {currentUser && (
             <li className="active">
-              <Link to={"/"} className="nav-link">
+              {/* <Link to={"/"} className="nav-link">
                 HOME
-                {/* <img src="https://media-exp1.licdn.com/dms/image/C560BAQHZ36eqffoDbw/company-logo_200_200/0/1607066793624?e=2147483647&v=beta&t=oemfKLWsSWsCijZfnFaCdAOH5z_we7ptWJXSvHV1O9k"/> */}
-              </Link>
+              
+              </Link> */}
             </li>
           )}
 
           {currentUser ? (
+          
             <li className="nav-item">
-              <a href="/login" className="logout" onClick={logOut}>
-                Logout
-              </a>
+             
+              {/* <button   onClick={logOut} href="/login" className="logout">
+                <FiLogOut className="logout_logo" />
+                Sign Out
+              </button> */}
             </li>
           ) : (
             <ul>

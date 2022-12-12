@@ -2,6 +2,7 @@ import { useState } from "react";
 import authService from "../context/auth.server";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
+import Navbar from "../Navbar";
 
 const Signup = () => {
   const [email, setemail] = useState("");
@@ -16,8 +17,8 @@ const Signup = () => {
                 // check for token and user already exists with 200
             alert("Sign up successfully", response);
 
-          // navigate('/login');
-          window.location.reload();
+            navigate("/");
+            window.location.reload(); 
 
         },
       (error)=>{
@@ -35,6 +36,8 @@ const Signup = () => {
   };
 
   return (
+    <>
+          <Navbar />
     <div className="container-signup">
       
       <div className="left_signup">
@@ -58,9 +61,10 @@ const Signup = () => {
         
       </form>
       </div>
-      {/* <div className="right"></div> */}
+ 
   
     </div>
+    </>
   );
 };
 export default Signup;

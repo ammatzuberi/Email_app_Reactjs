@@ -55,7 +55,7 @@ const Contact = () => {
   // console.log(document.getElementById("email_user"))
   // console.log(user_email)
   const statuscheck = () => {
-    window.location.href = "/CheckStatus";
+    window.location.href = "/";
   };
 
   function handlesubmit() {
@@ -72,6 +72,7 @@ const Contact = () => {
 
   useEffect(() => {
     get_emailValue();
+ 
   }, []);
 
   const postmarkMail = async (e) => {
@@ -97,7 +98,7 @@ const Contact = () => {
       .then((res) => {
         console.log(res);
         alert("message sent form postmark ");
-        window.location.href = "/CheckStatus";
+        window.location.href = "/";
       })
       // client
       //   .sendEmail({
@@ -149,7 +150,7 @@ const Contact = () => {
       .then((res) => {
         console.log(res.data);
         alert("message sent Successfully ");
-        window.location.href = "/CheckStatus";
+        window.location.href = "/";
       });
     client
       .sendEmail({
@@ -163,10 +164,10 @@ const Contact = () => {
           console.log(result.text);
           alert("message sent from postmark/ ");
         },
-        (error) => {
-          console.log(error.text);
-          alert("an error occured while sending message");
-        }
+        // (error) => {
+        //   console.log(error.text);
+        //   alert("Please RE-Enter Details..");
+        // }
       );
 
     emailjs
@@ -190,6 +191,7 @@ const Contact = () => {
   };
 
   function handle(e) {
+
     const newdata = { ...data };
     // newdata = { ...data, [e.target.id]: e.target.value };
     newdata[e.target.id] = e.target.value;
@@ -250,20 +252,24 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="row">
-            <div className="col">
+          <div className="row"    >
+            <div className="col" required>
               <label>Supervisor</label>
-              <select
+              <select 
                 className="form-control"
                 onChange={(e) => handle(e)}
                 value={data.supervisor}
                 id="supervisor"
                 name="head"
-              >
-                <option> --Select--</option>
+                required
+                class="form-control" >
+                <option  value="" > --Select--</option>
                 <option name="head">Shah Saud Abdali</option>
                 <option name="head">Syed Abu Rehan</option>
                 <option name="head">Mohammad Hamza</option>
+                <option name="head">Mohammad Munzir</option>
+                <option name="head"> Mehtaab Ahmad</option>
+                <option name="head">Naseem beig</option>
               </select>
             </div>
 
@@ -275,8 +281,9 @@ const Contact = () => {
                 value={data.productType}
                 name="P_Name"
                 id="productType"
+                required
               >
-                <option> --Select--</option>
+                <option  value=""> --Select--</option>
                 <option name="P_Name">LAPTOP</option>
                 <option name="P_Name">DESKTOP</option>
            
@@ -287,8 +294,8 @@ const Contact = () => {
           <div className="row">
             <div className="col">
               <label>Need </label>
-              <select className="form-control">
-                <option> --Select--</option>
+              <select className="form-control" required>
+                <option  value=""> --Select--</option>
                 <option name="need">ITEM </option>
                 <option name="need">ASSIST </option>
               </select>
@@ -315,8 +322,9 @@ const Contact = () => {
                 value={data.department}
                 id="department"
                 name="Department"
+                required
               >
-                <option> --Select--</option>
+                <option  value=""> --Select--</option>
                 <option name="Department">PIEZO</option>
                 <option name="Department">R&D (IT)</option>
                 <option name="Department">Sale & Finance </option>
